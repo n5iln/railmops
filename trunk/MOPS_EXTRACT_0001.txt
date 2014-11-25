@@ -1,0 +1,30 @@
+MOPS/PRSCHD              ATLANTIC AND PACIFIC RAILROAD          26JUN1972 10:00
+AJ                             LIST OF SCHEDULES                     Page:    1
+
+       SCHE RO NAME=========================  STATUS== RUN DAYS D C =DEP
+
+       #81  08 COAL TRIP #1 MTY               ACTIVE   1234567. W 3 0045
+       #43  04 WESTERN LOCAL                  ACTIVE   1234567. W 1 0100
+       #44  04 EASTERN LOCAL                  ACTIVE   1234567. E 1 0100
+       #84  08 COAL TRIP #4 LOAD              RUNNING  123456.8 E 3 0245
+       #51  05 SPRNGFLD-PTTSFLD W             ACTIVE   12345... W 2 0300
+       #61  06 RUSSELL-STOCKBRIDGE            ACTIVE   1.3.5... W 2 0530
+       #62  06 STOCKBRIDGE-RUSSELL            ACTIVE   1.3.5... E 2 0600
+       #32  03 SCHODACK EAST                  ACTIVE   12345... E 3 0630
+       #21  02 PITTSFIELD OUT                 ACTIVE   12345... W 3 0700
+       #41  04 THE POWERHOUSE WEST            ACTIVE   1.3.5... W 1 0700
+       #401 04 THE PACIFIC EXPRESS            ACTIVE   123456.. W 1 0800
+       #402 04 THE ATLANTIC EXPRESS           ACTIVE   123456.. E 1 0800
+       #42  04 THE POWERHOUSE EAST            RUNNING  .2.4.6.. E 1 0800
+       #85  08 COAL TRIP #5 MTY               ACTIVE   12345678 W 3 0802
+       #82  08 COAL TRIP #2 LOAD              ACTIVE   1234567. E 3 0826
+       #404 04 ATLANTIC GATEWAY               RUNNING  .23456.8 E 1 1300
+       #52  05 PTTSFLD-SPRNGFLD E             ACTIVE   12345... E 2 1300
+       #31  03 SCHODACK WEST                  ACTIVE   12345... W 3 1315
+       #83  08 COAL TRIP #3 MTY               ACTIVE   123456.8 W 3 1351
+       #403 04 PACIFIC GATEWAY                RUNNING  .23456.8 W 1 1400
+       #86  08 COAL TRIP #6 LOAD              ACTIVE   12345678 E 3 1543
+       #22  02 PITTSFIELD IN                  ACTIVE   12345... E 3 1644
+
+
+ ** END OF DATA: 22 PRINTED **

@@ -1,0 +1,798 @@
+-----> *****************************************************************
+-----> * START OF TEST SUITE                                           *
+-----> *****************************************************************
+-----> * NOTE - load calendar from 1970-1975
+chparm rrname;atlantic and pacific railroad
+chparm areasize;3
+chparm cartsize;4
+chparm carxsize;8
+chparm classize;3
+chparm commsize;4
+chparm curosize;3
+chparm loadsize;4
+chparm locosize;4
+chparm loctsize;6
+chparm plaxsize;2
+chparm railsize;3
+chparm routsize;2
+chparm statsize;3
+chparm staxsize;4
+chparm schdsize;4
+chparm carmaint;120
+chparm carworks;30
+chparm direction;w
+chparm passenger;pas
+chparm trimops;yes
+settim 25jun1972 23:59:00 SUN
+-----> add user data ---------------------------------------------------
+aduser bf;brian;s
+aduser ab;alan bennett;r
+aduser bc;bernie chesterfield;n
+aduser cd;charlie duff;r
+aduser de;david evans;n
+-----> add default railroad data --------------------------------------
+adrail apr;atlantic and pacific railroad
+adrail prr;the pittsfield railroad
+-----> add default area data -----------------------------------------
+adarea SPR;springfield;apr
+adarea STK;stockbridge;apr
+adarea SCH;schodack   ;apr
+adarea PTF;pittsfield ;prr
+-----> add default station type data ----------------------------------
+adstat stn;station
+adstat jcn;junction
+adstat i/c;interchange
+adstat sta;staging/fiddle yard
+-----> add default station data ---------------------------------------
+adstax 1000;sprnglfd;springfield           ;spr;sta;
+adstax 1050;sprfldyd;springfield yard      ;spr;sta;
+adstax 1100;hartford;hartford              ;spr;sta;1000
+adstax 1200;bostonxx;boston                ;spr;sta;1000
+adstax 2000;rslrdjcn;russel road junction  ;stk;jcn;
+adstax 2050;AVEBURYP;AVEBURY ROAD JCN      ;spr;jcn; 
+adstax 2060;AVEBURYP;AVEBURY ROAD PWR STN  ;spr;STN;
+adstax 2100;rsslroad;russell road          ;spr;stn;
+adstax 3000;wstfield;westfield             ;stk;stn;
+adstax 4000;stckbrdg;stockbridge           ;stk;stn;
+adstax 4100;stkbrgyd;stockbridge yard      ;stk;stn;
+adstax 4200;stkbrgjn;stockbridge junction  ;stk;jcn;
+adstax 4250;stkbrght;stockbridge heights   ;stk;stn;
+adstax 5000;felhamjn;felham junction       ;stk;jcn;
+adstax 5050;pfdapric;pittsfield/apr i/c    ;stk;i/c;
+adstax 6000;forstjcn;forrest junction      ;ptf;jcn;
+adstax 6100;valleyyd;valley yard           ;ptf;stn;
+adstax 6200;pittsfld;pittsfield            ;ptf;stn;
+adstax 6500;valleydp;valley depot          ;ptf;stn;
+adstax 7000;schodack;schodack              ;sch;sta;
+adstax 7100;albanyxx;albany                ;sch;sta;7000
+adstax 7200;syracuse;syracuse              ;sch;sta;7000
+adstax 7300;rochestr;rochester             ;sch;sta;7000
+-----> add default place data --------------------------------------
+adplax 1000;90;springfield passenger depot;x;
+adplax 1050;88;SPRINGFIELD YARD           ;x;25000                     
+adplax 1050;91;SPRINGFIELD LOCO MAINT     ;L;  820
+adplax 1050;93;SPRINGFIELD DIESEL FUEL    ;D;  400
+adplax 1050;95;SPRINGFIELD CARS           ;M; 2000
+adplax 1050;96;SPRINGFIELD CLEANING       ;C;  400 
+adplax 3000;90;WESTFIELD PASSENGER DEPOT  ;x;
+adplax 3000;93;WESTFIELD DIESEL FUEL      ;D;  350
+adplax 4000;90;STOCKBRIDGE PASSENGER DEPOT;x;
+adplax 4100;88;STOCKBRIDGE YARD           ;x;18700                     
+adplax 4100;95;STOCKBRIDGE CARS           ;M; 3500
+adplax 4100;96;STOCKBRIDGE CLEANING       ;C;  400 
+adplax 6100;88;VALLEY YARD                ;x;12300                     
+adplax 6100;95;VALLEY YARD CARS           ;M; 3200
+adplax 6500;91;VALLEY DEPOT LOCO MAINT    ;L; 1520
+adplax 6500;93;VALLEY DEPOT DIESEL FUEL   ;D;  350 
+adplax 6500;95;VALLEY DEPOT CARS          ;M;  500 
+adplax 7000;88;SCHODACK YARD              ;x;34700                     
+adplax 7000;90;SCHODACK PASSENGER DEPOT   ;x;
+-----> add default loading data -------------------------------------
+adload ramp;loading platform            ;y;y
+adload tipl;car side tipple             ;y;n
+adload bins;gravity discharge bins      ;n;y
+adload vacx;vacuum discharge pump       ;n;y
+adload hopp;gravity hopper feed         ;y;n
+adload aprn;concrete apron (track level);y;y
+adload lift;crane lift (general use)    ;y;y
+adload cont;container lifting           ;y;y
+adload hose;hose fill (top loading)     ;y;n
+adload hosx;hose empty (side unloading) ;n;y
+adload roro;end loading for semis       ;y;y
+adload auto;automobile loading          ;y;y
+adload coal;coal hopper load            ;y;n
+adload coax;coal hopper discharge       ;n;y
+adload pass;passenger capacity          ;y;y
+-----> add commodity data -------------------------------------------
+adcomm 100;grain bag             ;ramp   ;50       ;25         ;Y        
+adcomm 200;palleted machine tools;ramp   ;45       ;45         ;N        
+adcomm 220;palleted auto parts   ;ramp   ;45       ;45         ;N        
+adcomm 320;paper (rolls)         ;ramp   ;55       ;55         ;N        
+adcomm 300;wood pulp             ;hose   ;42       ;33         ;y        
+adcomm 315;ink products          ;hose   ;73       ;73         ;N        
+adcomm 430;bleach (drums)        ;ramp   ;50       ;50         ;N        
+adcomm 420;sodium hypoclorite    ;hose   ;48       ;48         ;n        
+adcomm 410;hydrogen peroxide     ;hose   ;52       ;48         ;n        
+adcomm 500;food derivatives      ;ramp   ;14       ;14         ;y        
+adcomm 550;canned food (pallets) ;ramp   ;24       ;24         ;n        
+adcomm 600;aluminium sheets      ;ramp   ;18       ;12         ;n        
+adcomm 700;chalk derivatives     ;ramp   ;12       ;12         ;n        
+adcomm 800;coal                  ;coal   ;160      ;160        ;n
+-----> add industry data -------------------------------------------
+ADINDY 1000;01;springfield distribution       ;1080;SPRNGFLDDN;    ;ramp
+ADINDY 1100;01;hartford printing              ; 250;HRTFRDRAMP;    ;ramp
+ADINDY 1100;02;hartford printing (hose)       ; 150;HRTFRDHOSE;    ;hosx
+ADINDY 1200;01;boston press                   ; 600;BOSTONPRSS;    ;ramp
+ADINDY 1200;02;boston chemical inc ramp       ; 220;BOSTONCHM1;    ;ramp
+ADINDY 1200;03;boston chemical inc hose       ; 120;BOSTONCHM2;    ;hosx
+ADINDY 2060;01;avebury power station          ;3000; AVEBURYPWR;    ;coax
+ADINDY 2100;01;russell road domestic appliance; 180;RUSSELLDOM;ramp;
+ADINDY 4250;01;stockbridge heights coal       ;2500;STOCKBCOAL;coal;
+ADINDY 4250;02;stockbridge paper mill         ; 100;STOCKBPAPR;ramp;
+ADINDY 6200;01;pittsfield canning             ; 420;PITTSFDCAN;ramp;ramp
+ADINDY 6200;02;pittsfield chemicals           ;  95;PITTSFDCHM;hose;
+ADINDY 7000;01;albany derivatives             ; 115;ALBANYRAMP;ramp;
+ADINDY 7000;02;albany derivatives (hose)      ; 120;ALBANYHOSE;hose;
+ADINDY 7100;01;syracuse canned food           ; 335;SYRACUSECF;ramp;
+ADINDY 7100;02;rochester aluminium            ; 420;ROCHESTERA;ramp;
+-----> add customer routing -------------------------------------------
+adcuro c01;schodack-pittsfield i/c-pittsfield yard-pittsfield
+adcuro c02;schodack-russell road
+adcuro c03;schodack-springfield
+adcuro c04;s/bridge hghts-s/bridge/jcn-springfield
+adcuro c05;pittsfield-pittsfield i/c-springfield
+adcuro c06;s/br heights-s/bridge jcn/rsl rd jcn-avebury power
+-----> add car class data --------------------------------------
+adclas box;box car
+adclas gon;gondala
+adclas wel;well car
+adclas hop;hopper car
+adclas ree;reefer refrigerator car
+adclas tnk;tank car
+adclas cab;caboose
+adclas pas;passenger car
+-----> add warehouse --------------------------------------
+ADWARE ALBANYRAMP;500;PITTSFDCAN;2  ;120 ;1 ;box;  600;c06
+ADWARE ALBANYHOSE;315;HRTFRDHOSE;18 ;200 ;2 ;tnk;  400;c03
+ADWARE SYRACUSECF;550;SPRNGFLDDN;1  ;100 ;1 ;box;  300;c03
+ADWARE ROCHESTERA;600;PITTSFDCAN;2  ;150 ;2 ;gon;  300;c01
+ADWARE ROCHESTERA;600;RUSSELLDOM;10 ;300 ;3 ;gon; 1000;c02
+ADWARE PITTSFDCAN;550;SPRNGFLDDN;5  ;280 ;3 ;box;  500;c05
+ADWARE PITTSFDCHM;420;HRTFRDHOSE;3  ;300 ;3 ;tnk;  700;c05
+ADWARE PITTSFDCHM;410;BOSTONCHM2;4  ;410 ;4 ;tnk; 1000;c05
+ADWARE STOCKBCOAL;800;AVEBURYPWR;780;6150;40;hop;80000;c06
+ADWARE STOCKBPAPR;320;HRTFRDRAMP;3  ;280 ;3 ;box;  300;c04
+ADWARE STOCKBPAPR;320;BOSTONPRSS;4  ;500 ;4 ;box; 1000;c04
+-----> add default loco type data --------------------------------------
+adloct gp38/2;general purpose freight gp-38/2;d  ;5000 ;2600;22;  90;   45;   261;   59;    I
+adloct dd40ax;heavy haul freight dd40ax      ;d  ;6600 ;8230;57;  120;  50;   521;   98;    I  
+adloct gp7   ;freight gp-7                   ;d  ;2500 ;1600;18;  90;   45;   145;   56;    I
+adloct gp7dx ;freight gp-7 dummy power only  ;d  ;2500 ;1600;18;  90;   45;   145;   56;    s
+adloct e42ac ;electric passenger e42ac       ;e  ;4200 ;2200;16;  120;  35;   268;   70;    I
+adloct 6mupc ;passenger m.unit power car     ;d  ;2000 ;1800;22;  90;   45;    85;   57;    m
+-----> add default loco data -----------------------------------------------
+adloco 1010;gp38/2;apr;1050
+adloco 1011;gp38/2;apr;1050
+adloco 1012;gp38/2;apr;4100
+adloco 1013;gp38/2;apr;4100
+adloco 1014;gp38/2;prr;6500
+adloco 1015;gp38/2;prr;6500
+adloco 2101;dd40ax;apr;4100
+adloco 2102;dd40ax;apr;4100
+adloco 2103;dd40ax;apr;4100
+adloco 2104;dd40ax;apr;4100
+adloco 2105;dd40ax;apr;4100
+adloco 2106;dd40ax;apr;4100
+adloco 2107;dd40ax;apr;4100
+adloco 2108;dd40ax;apr;4100
+adloco 2109;dd40ax;apr;4100
+adloco 2110;dd40ax;apr;4100
+adloco 3000;gp7   ;prr;6500
+adloco 3001;gp7   ;prr;6500
+adloco 3900;gp7dx ;prr;6500
+adloco e401;e42ac ;apr;1050
+adloco e402;e42ac ;apr;1050
+adloco e403;e42ac ;apr;1050
+adloco e404;e42ac ;apr;1050
+adloco e405;e42ac ;apr;1050
+adloco e406;e42ac ;apr;1050
+adloco 6011;6mupc ;apr;1050
+adloco 6012;6mupc ;apr;1050
+adloco 6013;6mupc ;apr;1050
+adloco x100;tamper;apr;1050
+locoat 2101;4250
+locoat 2102;4250
+locoat 2103;2060
+locoat 2104;2060
+locoat e401;1200
+locoat e402;7300
+-----> add car type data --------------------------------------
+adcart b50 ;trainco box type 50ft ; 50;139;  80;   i;ramp;  ramp;box
+adcart b40 ;trainco box type 50ft ; 40;119;  70;   i;ramp;  ramp;box
+adcart g555;trainco gondala 55ft  ; 55;150;  70;   i;ramp;  ramp;gon
+adcart tank;trainco tank          ; 55;125;  65;   i;hose;  hosx;tnk
+adcart hop5;trainco hopper type 55; 55;154;  95;   i;coal;  coax;hop
+adcart mutc;passenger trailer car ; 45;103;  45;   m;pass;  pass;pas
+adcart open;passsenger open       ; 60;104;  38;   i;pass;  pass;pas
+adcart corr;passenger corridor    ; 60;105;  38;   i;pass;  pass;pas
+adcart bagg;baggage car           ; 60;103;  38;   i;pass;  pass;pas
+adcart obsv;observation car       ; 60;110;  38;   i;pass;  pass;pas
+-----> add car data -------------------------------------------
+adcarx 0610011;mutc;apr;1000
+adcarx 0005010;b50;apr;4100
+adcarx 0004032;b40;apr;4100
+adcarx 0050200;g555;prr;4250
+adcarx 0050300;tank;apr;4100
+adcarx 0050301;tank;apr;4100
+adcarx 2150001;hop5;apr;4250
+adcarx 2150002;hop5;apr;4250
+adcarx 2150003;hop5;apr;4250
+adcarx 2150004;hop5;apr;4250
+adcarx 2150005;hop5;apr;4250
+adcarx 2150006;hop5;apr;4250
+adcarx 2150007;hop5;apr;4250
+adcarx 2150008;hop5;apr;4250
+adcarx 2150009;hop5;apr;4250
+adcarx 2150010;hop5;apr;4250
+adcarx 2150011;hop5;apr;4250
+adcarx 2150012;hop5;apr;4250
+adcarx 2150013;hop5;apr;4250
+adcarx 2150014;hop5;apr;4250
+adcarx 2150015;hop5;apr;4250
+adcarx 2150016;hop5;apr;4250
+adcarx 2150017;hop5;apr;4250
+adcarx 2150018;hop5;apr;4250
+adcarx 2150019;hop5;apr;4250
+adcarx 2150020;hop5;apr;4250
+adcarx 2150021;hop5;apr;4250
+adcarx 2150022;hop5;apr;4250
+adcarx 2150023;hop5;apr;4250
+adcarx 2150024;hop5;apr;4250
+adcarx 2150025;hop5;apr;4250
+adcarx 2150026;hop5;apr;4250
+adcarx 2150027;hop5;apr;4250
+adcarx 2150028;hop5;apr;4250
+adcarx 2150029;hop5;apr;4250
+adcarx 2150030;hop5;apr;4250
+adcarx 2150031;hop5;apr;4250
+adcarx 2150032;hop5;apr;4250
+adcarx 2150033;hop5;apr;4250
+adcarx 2150034;hop5;apr;4250
+adcarx 2150035;hop5;apr;4250
+adcarx 2150036;hop5;apr;4250
+adcarx 2150037;hop5;apr;4250
+adcarx 2150038;hop5;apr;4250
+adcarx 2150039;hop5;apr;4250
+adcarx 2150040;hop5;apr;4250
+adcarx 2150041;hop5;apr;2060
+adcarx 2150042;hop5;apr;2060
+adcarx 2150043;hop5;apr;2060
+adcarx 2150044;hop5;apr;2060
+adcarx 2150045;hop5;apr;2060
+adcarx 2150046;hop5;apr;2060
+adcarx 2150047;hop5;apr;2060
+adcarx 2150048;hop5;apr;2060
+adcarx 2150049;hop5;apr;2060
+adcarx 2150050;hop5;apr;2060
+adcarx 2150051;hop5;apr;2060
+adcarx 2150052;hop5;apr;2060
+adcarx 2150053;hop5;apr;2060
+adcarx 2150054;hop5;apr;2060
+adcarx 2150055;hop5;apr;2060
+adcarx 2150056;hop5;apr;2060
+adcarx 2150057;hop5;apr;2060
+adcarx 2150058;hop5;apr;2060
+adcarx 2150059;hop5;apr;2060
+adcarx 2150060;hop5;apr;2060
+adcarx 2150061;hop5;apr;2060
+adcarx 2150062;hop5;apr;2060
+adcarx 2150063;hop5;apr;2060
+adcarx 2150064;hop5;apr;2060
+adcarx 2150065;hop5;apr;2060
+adcarx 2150066;hop5;apr;2060
+adcarx 2150067;hop5;apr;2060
+adcarx 2150068;hop5;apr;2060
+adcarx 2150069;hop5;apr;2060
+adcarx 2150070;hop5;apr;2060
+adcarx 2150071;hop5;apr;2060
+adcarx 2150072;hop5;apr;2060
+adcarx 2150073;hop5;apr;2060
+adcarx 2150074;hop5;apr;2060
+adcarx 2150075;hop5;apr;2060
+adcarx 2150076;hop5;apr;2060
+adcarx 2150077;hop5;apr;2060
+adcarx 2150078;hop5;apr;2060
+adcarx 2150079;hop5;apr;2060
+adcarx 2150080;hop5;apr;2060
+adcarx 0055000;g555;apr;4100
+adcarx p0001  ;open;apr;1200
+adcarx p0002  ;open;apr;1200
+adcarx p0003  ;open;apr;1200
+adcarx p0004  ;open;apr;1200
+adcarx p0005  ;open;apr;1200
+adcarx p0006  ;corr;apr;1200
+adcarx p0007  ;corr;apr;1200
+adcarx p0008  ;corr;apr;1200
+adcarx p0009  ;corr;apr;1200
+adcarx p0010  ;corr;apr;1200
+adcarx p0011  ;bagg;apr;1200
+adcarx p0012  ;bagg;apr;1200
+adcarx p0013  ;obsv;apr;1200
+adcarx p0014  ;open;apr;1200
+adcarx p0015  ;open;apr;1200
+adcarx p0016  ;open;apr;1200
+adcarx p0017  ;open;apr;1200
+adcarx p0018  ;open;apr;1200
+adcarx p0019  ;corr;apr;1200
+adcarx p0020  ;corr;apr;1200
+adcarx p0021  ;corr;apr;1200
+adcarx p0022  ;corr;apr;1200
+adcarx p0023  ;corr;apr;1200
+adcarx p0024  ;bagg;apr;1200
+adcarx p0025  ;bagg;apr;1200
+adcarx p0026  ;obsv;apr;1200
+adcarx p0027  ;open;apr;7300
+adcarx p0028  ;open;apr;7300
+adcarx p0029  ;open;apr;7300
+adcarx p0030  ;open;apr;7300
+adcarx p0031  ;open;apr;7300
+adcarx p0032  ;corr;apr;7300
+adcarx p0033  ;corr;apr;7300
+adcarx p0034  ;corr;apr;7300
+adcarx p0035  ;corr;apr;7300
+adcarx p0036  ;corr;apr;7300
+adcarx p0037  ;bagg;apr;7300
+adcarx p0038  ;bagg;apr;7300
+adcarx p0039  ;obsv;apr;7300
+adcarx p0040  ;open;apr;7300
+adcarx p0041  ;open;apr;7300
+adcarx p0042  ;open;apr;7300
+adcarx p0043  ;open;apr;7300
+adcarx p0044  ;open;apr;7300
+adcarx p0045  ;corr;apr;7300
+adcarx p0046  ;corr;apr;7300
+adcarx p0047  ;corr;apr;7300
+adcarx p0048  ;corr;apr;7300
+adcarx p0049  ;corr;apr;7300
+adcarx p0050  ;bagg;apr;7300
+adcarx p0051  ;bagg;apr;7300
+adcarx p0052  ;obsv;apr;7300
+acarxb 2150001;ct1
+acarxb 2150002;ct1
+acarxb 2150003;ct1
+acarxb 2150004;ct1
+acarxb 2150005;ct1
+acarxb 2150006;ct1
+acarxb 2150007;ct1
+acarxb 2150008;ct1
+acarxb 2150009;ct1
+acarxb 2150010;ct1
+acarxb 2150011;ct1
+acarxb 2150012;ct1
+acarxb 2150013;ct1
+acarxb 2150014;ct1
+acarxb 2150015;ct1
+acarxb 2150016;ct1
+acarxb 2150017;ct1
+acarxb 2150018;ct1
+acarxb 2150019;ct1
+acarxb 2150020;ct1
+acarxb 2150021;ct1
+acarxb 2150022;ct1
+acarxb 2150023;ct1
+acarxb 2150024;ct1
+acarxb 2150025;ct1
+acarxb 2150026;ct1
+acarxb 2150027;ct1
+acarxb 2150028;ct1
+acarxb 2150029;ct1
+acarxb 2150030;ct1
+acarxb 2150031;ct1
+acarxb 2150032;ct1
+acarxb 2150033;ct1
+acarxb 2150034;ct1
+acarxb 2150035;ct1
+acarxb 2150036;ct1
+acarxb 2150037;ct1
+acarxb 2150038;ct1
+acarxb 2150039;ct1
+acarxb 2150040;ct1
+acarxb 2150041;ct2
+acarxb 2150042;ct2
+acarxb 2150043;ct2
+acarxb 2150044;ct2
+acarxb 2150045;ct2
+acarxb 2150046;ct2
+acarxb 2150047;ct2
+acarxb 2150048;ct2
+acarxb 2150049;ct2
+acarxb 2150050;ct2
+acarxb 2150051;ct2
+acarxb 2150052;ct2
+acarxb 2150053;ct2
+acarxb 2150054;ct2
+acarxb 2150055;ct2
+acarxb 2150056;ct2
+acarxb 2150057;ct2
+acarxb 2150058;ct2
+acarxb 2150059;ct2
+acarxb 2150060;ct2
+acarxb 2150061;ct2
+acarxb 2150062;ct2
+acarxb 2150063;ct2
+acarxb 2150064;ct2
+acarxb 2150065;ct2
+acarxb 2150066;ct2
+acarxb 2150067;ct2
+acarxb 2150068;ct2
+acarxb 2150069;ct2
+acarxb 2150070;ct2
+acarxb 2150071;ct2
+acarxb 2150072;ct2
+acarxb 2150073;ct2
+acarxb 2150074;ct2
+acarxb 2150075;ct2
+acarxb 2150076;ct2
+acarxb 2150077;ct2
+acarxb 2150078;ct2
+acarxb 2150079;ct2
+acarxb 2150080;ct2
+acarxb p0001;p1
+acarxb p0002;p1
+acarxb p0003;p1
+acarxb p0004;p1
+acarxb p0005;p1
+acarxb p0006;p1
+acarxb p0007;p1
+acarxb p0008;p1
+acarxb p0009;p1
+acarxb p0010;p1
+acarxb p0011;p1
+acarxb p0012;p1
+acarxb p0013;p1
+acarxb p0014;p2
+acarxb p0015;p2
+acarxb p0016;p2
+acarxb p0017;p2
+acarxb p0018;p2
+acarxb p0019;p2
+acarxb p0020;p2
+acarxb p0021;p2
+acarxb p0022;p2
+acarxb p0023;p2
+acarxb p0024;p2
+acarxb p0025;p2
+acarxb p0026;p2
+acarxb p0027;p3
+acarxb p0028;p3
+acarxb p0029;p3
+acarxb p0030;p3
+acarxb p0031;p3
+acarxb p0032;p3
+acarxb p0033;p3
+acarxb p0034;p3
+acarxb p0035;p3
+acarxb p0036;p3
+acarxb p0037;p3
+acarxb p0038;p3
+acarxb p0039;p3
+acarxb p0040;p4
+acarxb p0041;p4
+acarxb p0042;p4
+acarxb p0043;p4
+acarxb p0044;p4
+acarxb p0045;p4
+acarxb p0046;p4
+acarxb p0047;p4
+acarxb p0048;p4
+acarxb p0049;p4
+acarxb p0050;p4
+acarxb p0051;p4
+acarxb p0052;p4
+-----> add route data ----------------------------------------
+adrout 01;valley depot-pittsfield i/c
+adrout 02;pittsfield-pittsfield i/c
+adrout 03;pittsfield i/c-rochester
+adrout 04;boston-rochester
+adrout 05;springfield yard-pittsfield i/c
+adrout 06;russell road-stockbridge yd
+adrout 07;springfield yd-stockbridge heights
+adrout 08;avebury-stockbridge heights
+-----> add section data --------------------------------------
+adsect 01;56;6500;6000
+adsect 01;59;6000;5050
+adsect 02;57;6200;6100
+adsect 02;58;6100;6000
+adsect 02;59;6000;5050
+adsect 03;60;5050;5000
+adsect 03;61;5000;7000
+adsect 03;70;7000;7100
+adsect 03;80;7100;7200
+adsect 03;90;7200;7300
+adsect 04;10;1200;1100
+adsect 04;20;1100;1000
+adsect 04;31;1000;1050
+adsect 04;32;1050;2000
+adsect 04;50;2000;3000
+adsect 04;51;3000;4000
+adsect 04;52;4000;4100
+adsect 04;53;4100;4200
+adsect 04;55;4200;5000
+adsect 04;61;5000;7000
+adsect 04;70;7000;7100
+adsect 04;80;7100;7200
+adsect 04;90;7200;7300
+adsect 05;32;1050;2000
+adsect 05;50;2000;3000
+adsect 05;51;3000;4000
+adsect 05;52;4000;4100
+adsect 05;53;4100;4200
+adsect 05;55;4200;5000
+adsect 05;60;5000;5050
+adsect 06;41;2100;2050
+adsect 06;43;2050;2000
+adsect 06;50;2000;3000
+adsect 06;51;3000;4000
+adsect 06;52;4000;4100
+adsect 07;53;4100;4200
+adsect 07;54;4200;4250
+adsect 08;42;2060;2050
+adsect 08;43;2050;2000
+adsect 08;50;2000;3000
+adsect 08;51;3000;4000
+adsect 08;52;4000;4100
+adsect 08;53;4100;4200
+adsect 08;54;4200;4250
+-----> validate and publish route ---------------------------------
+validr 01
+validr 02
+validr 03
+validr 04
+validr 05
+validr 06
+validr 07
+validr 08
+publsh 01
+publsh 02
+publsh 03
+publsh 04
+publsh 05
+publsh 06
+publsh 07
+publsh 08
+-----> add schedule data -------------------------------------
+adschd #21;02;pittsfield out       ;3;12345...;w
+adschd #22;02;pittsfield in        ;3;12345...;e
+adschd #31;03;schodack west        ;3;12345...;w
+adschd #32;03;schodack east        ;3;12345...;e
+adschd #41;04;the powerhouse west  ;1;1.3.5...;w
+adschd #42;04;the powerhouse east  ;1;.2.4.6..;e
+adschd #43;04;western local        ;1;1234567.;w
+adschd #44;04;eastern local        ;1;1234567.;e
+adschd #51;05;sprngfld-pttsfld w   ;2;12345...;w
+adschd #52;05;pttsfld-sprngfld e   ;2;12345...;e
+adschd #61;06;russell-stockbridge  ;2;1.3.5...;w
+adschd #62;06;stockbridge-russell  ;2;1.3.5...;e
+adschd #81;08;coal trip #1 MTY     ;3;1234567.;w
+adschd #82;08;coal trip #2 LOAD    ;3;1234567.;e
+adschd #83;08;coal trip #3 MTY     ;3;123456.8;w
+adschd #84;08;coal trip #4 LOAD    ;3;123456.8;e
+adschd #85;08;coal trip #5 MTY     ;3;12345678;w
+adschd #86;08;coal trip #6 LOAD    ;3;12345678;e
+adschd #402;04;the atlantic express;1;123456..;e
+adschd #401;04;the pacific express ;1;123456..;w
+adschd #404;04;atlantic gateway    ;1;.23456.8;e
+adschd #403;04;pacific gateway     ;1;.23456.8;w
+-----> add timings data --------------------------------------
+CHTIMS #31;60;1315;1327
+CHTIMS #31;61;1327;1421
+CHTIMS #31;70;1424;1511
+CHTIMS #31;80;1511;1545
+CHTIMS #31;90;1545;1626
+CHTIMS #41;10;0700;0800
+CHTIMS #41;20;0800;0829
+CHTIMS #41;31;0829;0839
+CHTIMS #41;32;0839;0907
+CHTIMS #41;50;0907;0948
+CHTIMS #41;51;0948;1019
+CHTIMS #41;52;1019;1024
+CHTIMS #41;53;1500;1505
+CHTIMS #41;55;1505;1557
+CHTIMS #41;61;1557;1642
+CHTIMS #41;70;1642;1721
+CHTIMS #41;80;1721;1749
+CHTIMS #41;90;1749;1823
+CHTIMS #43;10;0100;0300
+CHTIMS #43;20;0300;0358
+CHTIMS #43;31;0458;0518
+CHTIMS #43;32;0718;0814
+CHTIMS #43;50;0814;0937
+CHTIMS #43;51;1005;1108
+CHTIMS #43;52;1108;1119
+CHTIMS #43;53;1400;1410
+CHTIMS #43;55;1410;1555
+CHTIMS #43;61;1555;1725
+CHTIMS #43;70;1830;1948
+CHTIMS #43;80;2045;2141
+CHTIMS #43;90;2238;2346
+CHTIMS #401;10;0800;0912
+CHTIMS #401;20;0920;0955
+CHTIMS #401;31;1000;1012
+CHTIMS #401;32;1012;1046
+CHTIMS #401;50;1046;1136
+CHTIMS #401;51;1145;1223
+CHTIMS #401;52;1230;1237
+CHTIMS #401;53;1237;1243
+CHTIMS #401;55;1243;1346
+CHTIMS #401;61;1346;1440
+CHTIMS #401;70;1450;1537
+CHTIMS #401;80;1545;1619
+CHTIMS #401;90;1630;1711
+CHTIMS #403;10;1400;1512
+CHTIMS #403;20;1520;1555
+CHTIMS #403;31;1600;1612
+CHTIMS #403;32;1612;1646
+CHTIMS #403;50;1646;1736
+CHTIMS #403;51;1745;1823
+CHTIMS #403;52;1830;1837
+CHTIMS #403;53;1837;1843
+CHTIMS #403;55;1843;1946
+CHTIMS #403;61;1946;2040
+CHTIMS #403;70;2050;2137
+CHTIMS #403;80;2145;2219
+CHTIMS #403;90;2230;2311
+CHTIMS #51;32;0300;0334
+CHTIMS #51;50;0334;0424
+CHTIMS #51;51;0424;0502
+CHTIMS #51;52;0502;0509
+CHTIMS #51;53;1100;1106
+CHTIMS #51;55;1106;1209
+CHTIMS #51;60;1209;1221
+CHTIMS #61;41;0530;0610
+CHTIMS #61;43;0610;0718
+CHTIMS #61;50;0718;0841
+CHTIMS #61;51;0841;0944
+CHTIMS #61;52;0944;0955
+CHTIMS #32;90;0630;0711
+CHTIMS #32;80;0711;0745
+CHTIMS #32;70;0745;0832
+CHTIMS #32;61;0832;0926
+CHTIMS #32;60;0926;0938
+CHTIMS #42;90;0800;0834
+CHTIMS #42;80;0834;0902
+CHTIMS #42;70;0902;0941
+CHTIMS #42;61;0941;1026
+CHTIMS #42;55;1026;1118
+CHTIMS #42;53;1118;1123
+CHTIMS #42;52;1500;1505
+CHTIMS #42;51;1505;1536
+CHTIMS #42;50;1536;1617
+CHTIMS #42;32;1617;1645
+CHTIMS #42;31;1645;1655
+CHTIMS #42;20;1655;1724
+CHTIMS #42;10;1724;1824
+CHTIMS #44;90;0100;0208
+CHTIMS #44;80;0300;0356
+CHTIMS #44;70;0445;0603
+CHTIMS #44;61;0645;0815
+CHTIMS #44;55;0815;1000
+CHTIMS #44;53;1000;1010
+CHTIMS #44;52;1330;1341
+CHTIMS #44;51;1430;1533
+CHTIMS #44;50;1600;1723
+CHTIMS #44;32;1723;1819
+CHTIMS #44;31;1900;1920
+CHTIMS #44;20;2012;2110
+CHTIMS #44;10;2158;2358
+CHTIMS #402;90;0800;0841
+CHTIMS #402;80;0850;0924
+CHTIMS #402;70;0930;1017
+CHTIMS #402;61;1025;1119
+CHTIMS #402;55;1119;1222
+CHTIMS #402;53;1222;1228
+CHTIMS #402;52;1228;1235
+CHTIMS #402;51;1245;1323
+CHTIMS #402;50;1330;1420
+CHTIMS #402;32;1420;1454
+CHTIMS #402;31;1454;1506
+CHTIMS #402;20;1515;1550
+CHTIMS #402;10;1600;1712
+CHTIMS #404;90;1300;1341
+CHTIMS #404;80;1345;1419
+CHTIMS #404;70;1425;1512
+CHTIMS #404;61;1520;1614
+CHTIMS #404;55;1614;1717
+CHTIMS #404;53;1717;1723
+CHTIMS #404;52;1723;1730
+CHTIMS #404;51;1740;1818
+CHTIMS #404;50;1825;1915
+CHTIMS #404;32;1915;1949
+CHTIMS #404;31;1949;2001
+CHTIMS #404;20;2010;2045
+CHTIMS #404;10;2055;2207
+CHTIMS #52;60;1300;1312
+CHTIMS #52;55;1312;1415
+CHTIMS #52;53;1415;1421
+CHTIMS #52;52;1725;1732
+CHTIMS #52;51;1732;1810
+CHTIMS #52;50;1810;1900
+CHTIMS #52;32;1900;1934
+CHTIMS #62;52;0600;0611
+CHTIMS #62;51;0611;0714
+CHTIMS #62;50;0714;0837
+CHTIMS #62;43;0837;0945
+CHTIMS #62;41;0945;1025
+CHTIMS #82;54;0826;1008
+CHTIMS #82;53;1008;1014
+CHTIMS #82;52;1014;1021
+CHTIMS #82;51;1021;1103
+CHTIMS #82;50;1103;1158
+CHTIMS #82;43;1158;1243
+CHTIMS #82;42;1243;1251
+CHTIMS #84;54;0245;0427
+CHTIMS #84;53;0427;0433
+CHTIMS #84;52;0433;0440
+CHTIMS #84;51;0440;0522
+CHTIMS #84;50;0522;0617
+CHTIMS #84;43;0617;0702
+CHTIMS #84;42;0702;0844
+CHTIMS #86;54;1543;1725
+CHTIMS #86;53;1725;1731
+CHTIMS #86;52;1731;1738
+CHTIMS #86;51;1738;1820
+CHTIMS #86;50;1820;1915
+CHTIMS #86;43;1915;2000
+CHTIMS #86;42;2000;2008
+CHTIMS #81;42;0045;0058
+CHTIMS #81;43;0058;0206
+CHTIMS #81;50;0206;0329
+CHTIMS #81;51;0329;0432
+CHTIMS #81;52;0432;0443
+CHTIMS #81;53;0443;0453
+CHTIMS #81;54;0453;0726
+CHTIMS #83;42;1351;1404
+CHTIMS #83;43;1404;1512
+CHTIMS #83;50;1512;1635
+CHTIMS #83;51;1635;1738
+CHTIMS #83;52;1738;1749
+CHTIMS #83;53;1749;1759
+CHTIMS #83;54;1759;2032
+CHTIMS #85;42;0802;0815
+CHTIMS #85;43;0815;0923
+CHTIMS #85;50;0923;1046
+CHTIMS #85;51;1046;1149
+CHTIMS #85;52;1149;1200
+CHTIMS #85;53;1200;1210
+CHTIMS #85;54;1210;1443
+chtims #21;57;0700;0712
+chtims #21;58;0945;1012
+chtims #21;59;1012;1345
+chtims #22;59;1644;2018
+chtims #22;58;2018;2109
+chtims #22;57;2330;2348
+-----> activate schedules --------------------------------------
+active #31
+active #41
+active #43
+active #401
+active #403
+active #51
+active #61
+active #81
+active #83
+active #85
+active #32
+active #42
+active #44
+active #402
+active #404
+active #52
+active #62
+active #82
+active #84
+active #86
+active #21
+active #22
+-----> set speed --------------------------------------
+cspeed 4
+flashx test data loaded
